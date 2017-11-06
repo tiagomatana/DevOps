@@ -6,13 +6,22 @@ echo "==========================================================
         Digite o número do componente a ser instalado:
         1 - Java 8
         2 - Atom
-        3 - Spotify
-        4 - Eclipse
-        5 - NodeJS
+        3 - Eclipse
+        4 - NodeJS
+        5 - NPM
         6 - Postman
         7 - Robo3T
         8 - Visual Studio Code
-        9 - NPM
+        9 - Meld
+        10 - Intellij IDEA Community
+        11 - Intellij IDEA Ultimate
+        12 - Vim
+        13 - Git
+        14 - Maven
+
+        EXTRAS
+        21 - Spotify
+        22 - HipChat
         0 - Sair
 ==========================================================="
 echo -n "->OPÇÃO:  "
@@ -33,16 +42,13 @@ case $opcao in
     2)
         sudo add-apt-repository ppa:webupd8team/atom -y && sudo apt-get update && sudo apt-get install atom -y;;
     3)
-        sudo sh -c "echo 'deb http://repository.spotify.com stable non-free' >> /etc/apt/sources.list.d/spotify.list"
-        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-        sudo apt-get update
-        sudo apt-get install spotify-client;;
-    4)
         sudo apt-get install eclipse
         sudo apt-get update;;
-    5)
+    4)
         curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
         sudo apt-get install -y nodejs;;
+    5)
+        sudo apt install npm;;
     6)
         wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz
         sudo tar -xzf postman.tar.gz -C /opt
@@ -71,7 +77,36 @@ case $opcao in
         sudo apt-get update
         sudo apt-get install vscode;;
     9)
-        sudo apt install npm;;
+        sudo apt-get install meld;;
+    10)
+        sudo add-apt-repository ppa:ubuntuhandbook1/apps
+        sudo apt-get update
+        sudo apt-get install intellij-idea-community;;
+    11)
+        sudo add-apt-repository ppa:ubuntuhandbook1/apps
+        sudo apt-get update
+        sudo apt-get install intellij-idea-ultimate;;
+    12)
+        sudo apt-get install vim;;
+    13)
+        sudo apt-get update
+        sudo apt-get install git;;
+    13)
+        sudo apt-get install docker
+        sudo apt-get update
+        sudo apt-get install docker-ce;;
+    14)
+        sudo apt-get install maven;;
+    21)
+        sudo sh -c "echo 'deb http://repository.spotify.com stable non-free' >> /etc/apt/sources.list.d/spotify.list"
+        sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+        sudo apt-get update
+        sudo apt-get install spotify-client;;
+    22)
+        sudo sh -c 'echo "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client $(lsb_release -c -s) main" > /etc/apt/sources.list.d/atlassian-hipchat4.list'
+        wget -O - https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public | sudo apt-key add -
+        sudo apt-get update
+        sudo apt-get install hipchat4;;
     0)
         echo "Saindo..."
         exit;;
