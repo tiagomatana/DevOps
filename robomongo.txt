@@ -1,4 +1,0 @@
-sudo wget https://download.studio3t.com/studio-3t/linux/5.6.3/studio-3t-linux-x64.tar.gz
-sudo tar -xf studio-3t-linux-x64.tar.gz
-rm -rf studio-3t-linux-x64.tar.gz
-./studio-3t-5.6.3-linux-x64/bin/studio-3t.sh

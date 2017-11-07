@@ -18,6 +18,7 @@ echo "==========================================================
         12 - Vim
         13 - Git
         14 - Maven
+        15 - Tmux
 
         EXTRAS
         21 - Spotify
@@ -97,6 +98,8 @@ case $opcao in
         sudo apt-get install docker-ce;;
     14)
         sudo apt-get install maven;;
+    15)
+        sudo apt-get install tmux;;
     21)
         sudo sh -c "echo 'deb http://repository.spotify.com stable non-free' >> /etc/apt/sources.list.d/spotify.list"
         sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
