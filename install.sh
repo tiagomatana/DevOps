@@ -55,17 +55,14 @@ case $opcao in
         sudo tar -xzf postman.tar.gz -C /opt
         rm postman.tar.gz
         sudo ln -s /opt/Postman/Postman /usr/bin/postman
-        echo "Copie e cole no Terminal
-        cat > ~/.local/share/applications/postman.desktop <<EOL
-        [Desktop Entry]
+        sudo echo "[Desktop Entry]
         Encoding=UTF-8
         Name=Postman
         Exec=postman
         Icon=/opt/Postman/resources/app/assets/icon.png
         Terminal=false
         Type=Application
-        Categories=Development;
-        EOL";;
+        Categories=Development;" > ~/.local/share/applications/postman.desktop;;
     7)
         sudo wget https://download.studio3t.com/studio-3t/linux/5.6.3/studio-3t-linux-x64.tar.gz
         sudo tar -xf studio-3t-linux-x64.tar.gz
@@ -76,7 +73,8 @@ case $opcao in
         curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
         sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
         sudo apt-get update
-        sudo apt-get install vscode;;
+        sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'6
+        sudo apt-get install code;;
     9)
         sudo apt-get install meld;;
     10)
