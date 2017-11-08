@@ -20,6 +20,7 @@ echo "==========================================================
         14 - Maven
         15 - Tmux
         16 - Java 7
+        17 - Docker
 
         EXTRAS
         21 - Spotify
@@ -103,10 +104,6 @@ case $opcao in
     13)
         sudo apt-get update
         sudo apt-get install git;;
-    13)
-        sudo apt-get install docker
-        sudo apt-get update
-        sudo apt-get install docker-ce;;
     14)
         sudo apt-get install maven;;
     15)
@@ -116,6 +113,10 @@ case $opcao in
         tar xvzf java-7-oracle.tar.xz
         sudo rm -rf java-7-oracle.tar.xz
         sudo mv java-7-oracle /usr/lib/jvm/;;
+    17)
+        sudo apt-get install docker
+        sudo apt-get update
+        sudo apt-get install docker-ce;;
     21)
         sudo sh -c "echo 'deb http://repository.spotify.com stable non-free' >> /etc/apt/sources.list.d/spotify.list"
         sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
