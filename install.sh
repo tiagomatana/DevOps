@@ -10,7 +10,7 @@ echo "==========================================================
         4 - NodeJS
         5 - NPM
         6 - Postman
-        7 - Robo3T
+        7 - Robomongo
         8 - Visual Studio Code
         9 - Meld
         10 - Intellij IDEA Community
@@ -65,11 +65,22 @@ case $opcao in
         Type=Application
         Categories=Development;" > ~/.local/share/applications/postman.desktop';;
     7)
-        sudo wget https://download.studio3t.com/studio-3t/linux/5.6.3/studio-3t-linux-x64.tar.gz
-        sudo tar -xf studio-3t-linux-x64.tar.gz
-        rm -rf studio-3t-linux-x64.tar.gz
-        ./studio-3t-5.6.3-linux-x64/bin/studio-3t.sh
-	sudo rm -rf studio-3t-linux-x64;;
+        wget https://download.robomongo.org/0.9.0/linux/robomongo-0.9.0-linux-x86_64-0786489.tar.gz
+        tar xf robomongo-0.9.0-linux-x86_64-0786489.tar.gz
+        sudo mv robomongo-0.9.0-linux-x86_64-0786489 /usr/bin/robomongo
+        sudo mkdir /opt/robomongo
+        wget http://mongodb-tools.com/img/robomongo.png -O /opt/robomongo/robomongo.png
+        sudo sh -c 'echo "[Desktop Entry]
+          Encoding=UTF-8
+          Name=Robomongo
+          Comment=Launch Robomongo
+          Icon=/opt/robomongo/robomongo.png
+          Exec=/usr/bin/robomongo/bin/robomongo
+          Terminal=false
+          Type=Application
+          Categories=Developer;
+          StartupNotify=true" > ~/.local/share/applications/robomongo.desktop';;
+
     8)
         sudo apt-get install curl
         curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
