@@ -39,7 +39,7 @@ case $opcao in
     1)
         sudo add-apt-repository ppa:webupd8team/java
         sudo apt-get update
-        sudo apt-get install oracle-java7-installer;;
+        sudo apt-get install oracle-java8-installer;;
     2)
         sudo add-apt-repository ppa:webupd8team/atom -y && sudo apt-get update && sudo apt-get install atom -y;;
     3)
@@ -55,25 +55,26 @@ case $opcao in
         sudo tar -xzf postman.tar.gz -C /opt
         rm postman.tar.gz
         sudo ln -s /opt/Postman/Postman /usr/bin/postman
-        sudo echo "[Desktop Entry]
+        sudo sh -c 'echo "[Desktop Entry]
         Encoding=UTF-8
         Name=Postman
         Exec=postman
         Icon=/opt/Postman/resources/app/assets/icon.png
         Terminal=false
         Type=Application
-        Categories=Development;" > ~/.local/share/applications/postman.desktop;;
+        Categories=Development;" > ~/.local/share/applications/postman.desktop';;
     7)
         sudo wget https://download.studio3t.com/studio-3t/linux/5.6.3/studio-3t-linux-x64.tar.gz
         sudo tar -xf studio-3t-linux-x64.tar.gz
         rm -rf studio-3t-linux-x64.tar.gz
-        ./studio-3t-5.6.3-linux-x64/bin/studio-3t.sh;;
+        ./studio-3t-5.6.3-linux-x64/bin/studio-3t.sh
+	sudo rm -rf studio-3t-linux-x64;;
     8)
-        sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+        sudo apt-get install curl
         curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
         sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
         sudo apt-get update
-        sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'6
+        sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
         sudo apt-get install code;;
     9)
         sudo apt-get install meld;;
@@ -104,7 +105,7 @@ case $opcao in
         sudo apt-get update
         sudo apt-get install spotify-client;;
     22)
-        sudo sh -c 'echo "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client $(lsb_release -c -s) main" > /etc/apt/sources.list.d/atlassian-hipchat4.list'
+        sudo sh -c echo "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client $(lsb_release -c -s) main" > /etc/apt/sources.list.d/atlassian-hipchat4.list
         wget -O - https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public | sudo apt-key add -
         sudo apt-get update
         sudo apt-get install hipchat4;;
