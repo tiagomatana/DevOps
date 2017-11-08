@@ -114,7 +114,7 @@ case $opcao in
         sudo rm -rf java-7-oracle.tar.xz
         sudo mv java-7-oracle /usr/lib/jvm/;;
     17)
-        sudo apt-get install docker
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
         sudo apt-get update
         sudo apt-get install docker-ce;;
     21)
