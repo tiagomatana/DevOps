@@ -66,9 +66,9 @@ case $opcao in
         Type=Application
         Categories=Development;" > ~/.local/share/applications/postman.desktop';;
     7)
-        wget https://download.robomongo.org/0.9.0/linux/robomongo-0.9.0-linux-x86_64-0786489.tar.gz
-        tar xf robomongo-0.9.0-linux-x86_64-0786489.tar.gz
-        sudo mv robomongo-0.9.0-linux-x86_64-0786489 /usr/bin/robomongo
+        wget https://download.robomongo.org/1.0.0/linux/robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz
+        tar xf robomongo-1.0.0-linux-x86_64-89f24ea.tar.gz
+        sudo mv robomongo-1.0.0-linux-x86_64-89f24ea /usr/bin/robomongo
         sudo mkdir /opt/robomongo
         wget http://mongodb-tools.com/img/robomongo.png -O /opt/robomongo/robomongo.png
         sudo sh -c 'echo "[Desktop Entry]
