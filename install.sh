@@ -110,7 +110,7 @@ case $opcao in
         sudo apt-get install tmux;;
     16)
         wget http://tiagomatana.esy.es/java7/java-7-oracle.tar.xz
-        tar -xvzf java-7-oracle.tar.xz
+        tar -xf java-7-oracle.tar.xz
         sudo rm -rf java-7-oracle.tar.xz
         sudo mv java-7-oracle /usr/lib/jvm/;;
     17)
