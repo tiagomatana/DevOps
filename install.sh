@@ -21,6 +21,7 @@ echo "==========================================================
         15 - Tmux
         16 - Java 7
         17 - Docker
+        18 - NPM CONFIG
 
         EXTRAS
         21 - Spotify
@@ -121,6 +122,14 @@ case $opcao in
         sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu zesty stable"
         sudo apt-get update
         sudo apt-get install docker-ce;;
+    18)
+        npm config set init.author.name 'Administrator User'
+        npm config set init.author.email 'admin@example.org'
+        npm config set init.author.url 'http://otus-solutions.com.br'
+        npm config set email admin@example.org
+        npm config set always-auth true
+        npm config set _auth 'YWRtaW46YWRtaW4xMjM='
+        npm config set registry http://nexus.inf.otus-solutions.com.br/repository/npm-repositories/;;
     21)
         sudo sh -c "echo 'deb http://repository.spotify.com stable non-free' >> /etc/apt/sources.list.d/spotify.list"
         sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
@@ -128,7 +137,7 @@ case $opcao in
         sudo apt-get install spotify-client;;
     22)
         wget https://atlassian.artifactoryonline.com/atlassian/hipchat-apt-client/pool/HipChat4-4.0.1517-Linux.deb
-	sudo dpkg -i HipChat4-4.0.1517-Linux.deb
+        sudo dpkg -i HipChat4-4.0.1517-Linux.deb
 	sudo rm -rf HipChat4-4.0.1517-Linux.deb;;
     0)
         echo "Saindo..."
