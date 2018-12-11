@@ -36,7 +36,7 @@ case $opcao in
         Encoding=UTF-8
         Name=Postman
         Exec=postman
-        Icon=/opt/Postman/resources/app/assets/icon.png
+        Icon=/opt/Postman/app/resources/app/assets/icon.png
         Terminal=false
         Type=Application
         Categories=Development;" > ~/.local/share/applications/postman.desktop'
@@ -61,15 +61,7 @@ case $opcao in
         sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
         sudo apt-get update
         sudo apt-get install docker-ce
-        sudo apt-get install docker.io
-        #NPM CONFIG
-        npm config set init.author.name 'Administrator User'
-        npm config set init.author.email 'admin@example.org'
-        npm config set init.author.url 'http://otus-solutions.com.br'
-        npm config set email admin@example.org
-        npm config set always-auth true
-        npm config set _auth 'YWRtaW46YWRtaW4xMjM='
-        npm config set registry http://nexus.inf.otus-solutions.com.br/repository/npm-repositories/;;
+        sudo apt-get install docker.io;;
 
     0)
         echo "Saindo..."
